@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>david</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --icon-color: #f5b15d;
+            --text-color: #FFFFFF;
+            --box-color: #f59a2c;
+            --accent-color: #f7ae68;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187.jpg?w=1436&h=958') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .profile-card {
+            background: linear-gradient(to right bottom, rgba(245, 154, 44, 0.6), rgba(247, 174, 104, 0.6));
+            border-radius: 20px;
+            padding: 30px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            color: var(--text-color);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--icon-color);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-description {
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .website-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .website-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(247, 174, 104, 0.8);
+            color: var(--text-color);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .website-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: rgba(247, 174, 104, 0.9);
+        }
+
+        .accent-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at top left, rgba(247, 174, 104, 0.4), transparent 70%);
+            border-radius: 0 0 0 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="accent-decoration"></div>
+        <img src="https://raw.githubusercontent.com/mrdavidss-vgg/assets/refs/heads/main/IMG_2962.jpeg" alt="Profile" class="profile-image">
+        <h1 class="profile-name">David</h1>
+        <p class="profile-description">Person who develops websites and is currently working on a school unblocking site.</p>
+        <div class="website-links">
+            <a href="https://catsploit.pages.dev" class="website-link" target="_blank" title="catsploit">
+                <i class="fas fa-briefcase"></i>
+            </a>
+            <a href="https://github.com/mrdavidss-vgg/" class="website-link" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
