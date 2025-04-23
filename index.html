@@ -120,6 +120,22 @@
             background: radial-gradient(circle at top left, rgba(247, 174, 104, 0.4), transparent 70%);
             border-radius: 0 0 0 100%;
         }
+        
+        /* Typing animation styles */
+        .typing-text {
+            font-weight: bold;
+            min-height: 1.5em;
+        }
+        
+        .typing-text::after {
+            content: "|";
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body>
@@ -127,7 +143,8 @@
         <div class="accent-decoration"></div>
         <img src="https://raw.githubusercontent.com/mrdavidss-vgg/assets/refs/heads/main/IMG_2962.jpeg" alt="Profile" class="profile-image">
         <h1 class="profile-name">David</h1>
-        <p class="profile-description">Website Developer. Developed over 35+ Websites (Most are test sites or just not in use.)</p>
+        <h2 class="profile-name typing-text" id="typing-text"></h2>
+        <p class="profile-description">random ass high schooler who likes to code sites. (14)</p>
         <div class="website-links">
             <a href="https://mrdavidss-vgg.github.io/websites" class="website-link" target="_blank" title="websites">
                 <i class="fas fa-briefcase"></i>
@@ -137,5 +154,47 @@
             </a>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const texts = [
+                "Web Developer",
+                "Catsploit Owner",
+                "Tech Enthusiast",
+                "Creative Mind"
+            ];
+            const typingElement = document.getElementById('typing-text');
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100; 
+            
+            function typeText() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    typingElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 50;
+                } else {
+                    typingElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 100;
+                
+                if (!isDeleting && charIndex === currentText.length) {
+                    typingSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    typingSpeed = 500;
+                }
+                
+                setTimeout(typeText, typingSpeed);
+            }
+            
+            setTimeout(typeText, 1000);
+        });
+    </script>
 </body>
 </html>
